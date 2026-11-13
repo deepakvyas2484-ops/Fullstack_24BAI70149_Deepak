@@ -1,0 +1,1 @@
+package com.fullstack.exp92; import org.springframework.boot.SpringApplication; import org.springframework.boot.autoconfigure.SpringBootApplication; @SpringBootApplication public class CdCanaryApplication { public static void main(String[] a){SpringApplication.run(CdCanaryApplication.class,a);} }

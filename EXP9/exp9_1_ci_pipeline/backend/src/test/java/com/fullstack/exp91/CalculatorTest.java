@@ -1,0 +1,1 @@
+package com.fullstack.exp91; import org.junit.jupiter.api.Test; import static org.junit.jupiter.api.Assertions.*; class CalculatorTest { Calculator c=new Calculator(); @Test void addition(){assertEquals(5,c.add(2,3));} @Test void multiplication(){assertEquals(12,c.multiply(3,4));} }

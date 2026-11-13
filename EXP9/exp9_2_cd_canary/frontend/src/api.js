@@ -1,0 +1,1 @@
+const API='http://localhost:8401/api'; export async function req(path,options={}){const r=await fetch(API+path,{headers:{'Content-Type':'application/json'},...options});if(!r.ok)throw Error('API '+r.status);return r.json();}
