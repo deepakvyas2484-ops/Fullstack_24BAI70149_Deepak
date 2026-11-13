@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 6.1 - User Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>User Management</h1>
+
+        <!-- Add User -->
+        <div class="form-section">
+
+            <h2>Add User</h2>
+
+            <input
+                type="text"
+                id="uid"
+                placeholder="Enter UID"
+            >
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter Name"
+            >
+
+            <button onclick="addUser()">
+                Add User
+            </button>
+
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+
+            <label>
+                Page Size:
+                <select id="pageSize" onchange="loadUsers()">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                </select>
+            </label>
+
+            <label>
+                Sort By:
+                <select id="sortBy" onchange="loadUsers()">
+                    <option value="uid">UID</option>
+                    <option value="name">Name</option>
+                </select>
+            </label>
+
+            <label>
+                Direction:
+                <select id="direction" onchange="loadUsers()">
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                </select>
+            </label>
+
+        </div>
+
+        <!-- User Table -->
+        <table>
+
+            <thead>
+                <tr>
+                    <th>UID</th>
+                    <th>Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="userTableBody">
+            </tbody>
+
+        </table>
+
+        <!-- Pagination -->
+        <div class="pagination">
+
+            <button onclick="previousPage()">
+                Previous
+            </button>
+
+            <span id="pageInfo">
+                Page 1
+            </span>
+
+            <button onclick="nextPage()">
+                Next
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

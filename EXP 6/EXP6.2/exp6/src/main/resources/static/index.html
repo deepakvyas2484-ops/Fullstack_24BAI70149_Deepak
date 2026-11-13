@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Experiment 6.2 - Caching & Query Optimization</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Experiment 6.2: Caching & Query Optimization</h1>
+
+    <!-- Add User -->
+    <div class="card">
+        <h2>Add User</h2>
+
+        <div class="form-row">
+            <input type="text" id="uid" placeholder="UID">
+            <input type="text" id="name" placeholder="Name">
+            <input type="text" id="city" placeholder="City">
+            <input type="text" id="country" placeholder="Country">
+
+            <button onclick="addUser()">Add User</button>
+        </div>
+    </div>
+
+
+    <!-- Query Optimization -->
+    <div class="card">
+        <h2>Query Optimization Tests</h2>
+
+        <div class="button-row">
+
+            <button onclick="runQuery('normal')">
+                Normal Query
+            </button>
+
+            <button onclick="runQuery('join-fetch')">
+                JOIN FETCH
+            </button>
+
+            <button onclick="runQuery('cached')">
+                Cached Query
+            </button>
+
+            <button onclick="runQuery('native')">
+                Native SQL
+            </button>
+
+        </div>
+    </div>
+
+
+    <!-- Sorting -->
+    <div class="card">
+        <h2>Sort Users</h2>
+
+        <div class="button-row">
+
+            <button onclick="sortUsers('id')">
+                Sort by ID
+            </button>
+
+            <button onclick="sortUsers('name')">
+                Sort by Name
+            </button>
+
+            <button onclick="loadUsers()">
+                Refresh
+            </button>
+
+        </div>
+    </div>
+
+
+    <!-- Status -->
+    <div id="status" class="status">
+        Ready
+    </div>
+
+
+    <!-- User List -->
+    <div class="card">
+
+        <h2>User List</h2>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>UID</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="userTableBody">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
